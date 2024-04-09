@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        operaciones operaciones = new operaciones();
+        int opcion;
+        do {
+
+            System.out.println("-------------BIENVENIDA AL DIGITIZADOR-------------");
+            System.out.println("---------¿QUE DESEA REALIZAR EL DIA DE HOY?----------");
+            System.out.println("1) Contar dígitos");
+            System.out.println("2) Sumar dígitos");
+            System.out.println("3) MCD");
+            System.out.println("4) Invertir una cadena");
+            System.out.println("5) Salir");
+            System.out.print("Ingrese su opción: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine();
+            switch (opcion) {
+                case 1:
+                    System.out.print("Ingrese un número entero positivo: ");
+                    int num1 = scanner.nextInt();
+                    System.out.println("el número de dígitos es: " + operaciones.contdigitos(num1));
+                    break;
+                case 2:
+                    System.out.print("ingrese un número entero positivo: ");
+                    int num2 = scanner.nextInt();
+                    System.out.println("La suma de los dígitos es: " + operaciones.sumdigitos(num2));
+                    break;
+                case 3:
+                    System.out.print("ingrese el primer número entero positivo: ");
+                    int num3 = scanner.nextInt();
+                    System.out.print("Ingrese el segundo número entero positivo: ");
+                    int num4 = scanner.nextInt();
+                    System.out.println("el MCD de los números es: " + operaciones.mcd(num3, num4));
+                    break;
+                case 4:
+                    System.out.print("ingrese una cadena para invertir: ");
+                    String cadena = scanner.nextLine();
+                    System.out.println("La cadena invertida es: " + operaciones.invcadena(cadena));
+                    break;
+                case 5:
+                    System.out.println("-------------Muchas gracias por utilizar el programa :)--------------");
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor seleccione una opción válida.");
+                    break;
+            }
+        } while (opcion != 5);
+    }
+}
